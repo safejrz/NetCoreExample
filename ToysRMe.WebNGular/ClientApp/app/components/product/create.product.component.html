@@ -1,0 +1,87 @@
+﻿<h1>Create</h1>
+
+<div class="progress" *ngIf="!product">
+    <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width:40%">Loading...</div>
+    <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:60%"></div>
+</div>
+
+<div>
+    <form class="form-horizontal" #form="ngForm" novalidate>
+        <div class="form-group">
+            <label for="name" class="control-label col-sm-2">Name </label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" [(ngModel)]="product.name" name="name" maxlength="50" placeholder="Name" required #name="ngModel">
+                <div *ngIf="name.errors && (name.dirty || name.touched)"
+                     class="alert alert-danger">
+                    <div [hidden]="!name.errors.required">
+                        Name is required
+                    </div>
+                    <div [hidden]="!name.errors.maxlength">
+                        Name cannot be more than 50 characters long.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="control-label col-sm-2">Description </label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" [(ngModel)]="product.description" maxlength="100" placeholder="Description" name="description" #description="ngModel">
+                <div *ngIf="description.errors && (description.dirty || description.touched)"
+                     class="alert alert-danger">
+                    <div [hidden]="!description.errors.maxlength">
+                        Description cannot be more than 100 characters long.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ageRestriction" class="control-label col-sm-2">Age Restriction </label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" [(ngModel)]="product.ageRestriction" pattern="^([0-9]|[1-9][0-9]|100)$" placeholder="Age Restriction" name="ageRestriction" #ageRestriction="ngModel">
+                <div *ngIf="ageRestriction.errors && (ageRestriction.dirty || ageRestriction.touched)"
+                     class="alert alert-danger">
+                    <div [hidden]="!ageRestriction.errors.pattern">
+                        Age must be betweem 0 and 100.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="company" class="control-label col-sm-2">Company </label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" [(ngModel)]="product.company" maxlength="50" placeholder="Company" name="company" #company="ngModel" required>
+                <div *ngIf="company.errors && (company.dirty || company.touched)"
+                     class="alert alert-danger">
+                    <div [hidden]="!company.errors.required">
+                        Company is required
+                    </div>
+                    <div [hidden]="!company.errors.maxlength">
+                        Company cannot be more than 50 characters long.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="price" class="control-label col-sm-2">Price </label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" [(ngModel)]="product.price" placeholder="Price" name="price" #price="ngModel" required pattern="^(1000|(?:[1-9][0-9]{0,2})(?:\.[0-9]{1,2})?)$">
+                <div *ngIf="price.errors && (price.dirty || price.touched)"
+                     class="alert alert-danger">
+                    <div [hidden]="!price.errors.required">
+                        Price is required
+                    </div>
+                    <div [hidden]="!price.errors.maxlength">
+                        Price cannot be more than 50 characters long.
+                    </div>
+                    <div [hidden]="!price.errors.pattern">
+                        Price must be betwwen 1 to 1000.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group  btn-group-sm">
+            <button type="button" class="btn btn-primary btn-group" [disabled]="form.invalid" (click)="createProduct()"><span class='glyphicon glyphicon-floppy-disk'></span> Create </button>
+            <a md-button class="btn btn-danger" [routerLink]="['/products']"><span class='glyphicon glyphicon-remove'></span> Cancel </a>
+        </div>
+    </form>
+</div>
