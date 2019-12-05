@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToysRMe.CommonLibrary", "ToysRMe.CommonLibrary\ToysRMe.CommonLibrary.csproj", "{CCB5509E-5862-493D-8918-9079191B500E}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToysRMe.WebMVC", "ToysRMe.WebMVC\ToysRMe.WebMVC.csproj", "{C76159BD-C06F-4D44-88AF-76190E5170A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToysRMe.WebNGular", "ToysRMe.WebNGular\ToysRMe.WebNGular.csproj", "{FDD912A5-3CD3-4271-80C0-E53BAE539FDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToysRMe.WebAngular", "ToysRMe.WebAngular\ToysRMe.WebAngular.csproj", "{06C8A307-5BD5-48AB-B25D-AE91D8DE7047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FDD912A5-3CD3-4271-80C0-E53BAE539FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD912A5-3CD3-4271-80C0-E53BAE539FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDD912A5-3CD3-4271-80C0-E53BAE539FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C8A307-5BD5-48AB-B25D-AE91D8DE7047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C8A307-5BD5-48AB-B25D-AE91D8DE7047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C8A307-5BD5-48AB-B25D-AE91D8DE7047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C8A307-5BD5-48AB-B25D-AE91D8DE7047}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
